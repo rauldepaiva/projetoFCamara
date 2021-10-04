@@ -1,0 +1,248 @@
+/* Importação de fonte */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap');
+
+/* Variáveis e tamanho fixo de fonte. Baseei as cores no visual da FCamara, usando um color picker em screenshots das páginas */
+
+:root {
+    --main-black: #34343B;
+    --main-lilac: #9053f8;
+    --main-orange: #fc6027;
+    --main-purple: #404098;
+    --main-white: #F3F2F7;
+    font-size: 10px;
+    font-family: Open Sans, sans-serif;
+    background: var(--main-white);
+}
+
+/* Barra superior */
+
+#navbar {
+    background: var(--main-purple);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5rem;
+    z-index: 10;
+    box-shadow: 0 .1rem .5rem #3B3B3D;
+}
+
+#bar-icon {
+    height: 5rem;
+    margin-left: 3rem;
+}
+
+#bar-icon:hover{    
+    cursor: pointer;    
+}
+
+#navbar ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 3rem;
+    list-style: none;
+}
+
+#navbar a {
+    color: var(--main-white);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 300;
+    padding: 2rem 2rem 1rem 2rem;
+}
+
+#navbar a:hover{
+    background: var(--main-orange);
+}
+
+/* Definindo margens do main pra evitar pequenas lacunas em branco. Usei este método por não conseguir fazer a imagem inicial e o bloco laranja ocuparem todo o viewport com a medida 100vw. */
+
+main {
+    margin-left: -1rem;
+    margin-right: -.8rem;
+}
+
+/* Tela de abertura */
+
+#opener {
+    width: 100%;
+    left: 0;
+}
+
+#opener-image {
+    object-fit: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+#opener-text-container {
+    display: flex;
+    justify-content: center;
+}
+
+#opener-text {
+    position: absolute;
+    top: 50%;
+    color: var(--main-white);
+    background: var(--main-orange);
+    padding: 0 2rem 0 2rem;
+    border-radius: 20px;
+}
+
+@media(max-width: 1200px) {
+    #opener-text {
+        width: 60%;
+    }
+}
+
+#opener-title {    
+    font-size: 5rem;
+    font-weight: 800;
+}
+
+#opener-subtitle {    
+    position: relative;
+    top: -3rem;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.content-section {
+    padding-top: 2.5rem;
+}
+
+/* Estilos gerais do conteúdo */
+
+.section-title, .section-subtitle, .content-paragraph {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.section-title {
+    font-size: 3.5rem;
+}
+
+.section-subtitle {
+    font-size: 1.7rem;
+    position: relative;
+    top: -3rem;
+    font-weight: 700;
+}
+
+.content-paragraph {
+    font-size: 1.6rem;
+    text-align: justify;
+}
+
+/* Seção introdução */
+
+#intro {
+    background: var(--main-orange);
+    color: var(--main-white);
+    padding-bottom: 4rem;
+    width: 100%;
+    margin-top: -.3rem;
+}
+
+/* Seção info */
+
+#info {
+    color: var(--main-black);
+}
+
+/* Grid */
+
+#info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 4rem;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 4rem;
+}
+
+.info-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Preparando os ícones da grid. Utilizei um template no Codepen que permite mudar a cor de preenchimento de PNGs sólidos */
+
+.info-icon {
+    width: 15rem;
+    filter: invert(20%) sepia(4%) saturate(1226%) hue-rotate(201deg) brightness(97%) contrast(95%);
+    position: relative;
+}
+
+.info-text {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 700;    
+    position: relative;
+    left: 0;
+}
+
+/* Seção contato */
+
+#contact {
+    background: var(--main-orange);
+    color: var(--main-white);
+    padding-bottom: 5rem;
+    margin-bottom: -1rem;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 30rem;
+}
+
+.form-field {
+    border: 1px solid var(--main-purple);
+    border-radius: .2rem;
+}
+
+#email, #subject {
+    height: 3rem;
+    width: 50%;
+}
+
+#message {
+    height: 10rem;
+    font-family: Open Sans, sans-serif;
+    font-size: 1.3rem;
+    width: 50%;
+}
+
+#submit {
+    background: var(--main-orange);
+    color: var(--main-white);
+    font-weight: 700;
+    font-size: 2rem;
+    border: 0;
+    border-radius: 1rem;
+    height: 4rem;
+    width: 20%;
+    margin-top: 1rem;    
+    border: 1px solid var(--main-white);    
+}
+
+#submit:hover {
+    cursor: pointer;
+    background: var(--main-purple);
+    border: 0;    
+    transition: background .5s, border .5s;
+}
+
+#confirmation {
+    font-size: 1.5rem;
+}
